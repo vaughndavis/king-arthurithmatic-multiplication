@@ -6,16 +6,25 @@
     <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <button id="play-button">PLAY</button>
         <script>
-
             const body = document.getElementsByTagName("body");
-            const playButton = document.getElementById("play-button");
             
+            //set up play button
+            const playButton = document.createElement("div");
+            playButton.id = "play-button";
+            playButton.textContent = "PLAY";
+
+            const disapearMe = () => {
+                    document.body.removeChild(playButton);
+                }
+
             const loadMainMenu = () => {
-                // document.
+                document.body.appendChild(playButton);
+                playButton.addEventListener("click", disapearMe);
                 
             };
+
+            loadMainMenu();
             /*
                 GAME DESIGN
                 
